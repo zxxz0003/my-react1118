@@ -1,31 +1,57 @@
 import { useEffect } from "react"
 import axios from 'axios';
+import './App.css'
 function App(){
 
-/ useEffect(()=>{
+ /*useEffect(()=>{
 (async()=>{
-  const data =await axios.get('./todo-demo/F-C0032-001.json');
+  const data =await axios.get('https://github.com/zxxz0003/my-react1118/blob/main/todo-demo/F-C0032-001.json');
   const{location}=data.data.cwaopendata.dataset;
   console.log(locaton);
 })
-  },[]) 
+  },[]) */
 
   return (
     <>
-  <h2>36小時天氣</h2>
-  <h3>台北市</h3>
-  <h3>2日</h3> 
-  <h5>上午6:00</h5>
-          ~
-  <h5>下午6:00</h5>
+    <div className="wrap">
+<h2>36小時</h2>
+{/*一列2藍*/ }
+<div className="row">
+  <div className="col">
+ {/*卡片樣式*/ }
+ <div className="card"></div>
+ {/*標題*/ }
+ <div className="card-title">台北市</div>
+ {/*內容*/ }
+ <div className="card-body">
+
+{/*一列三蘭*/ }
+<div className="row2">
+  <div className="col2"></div>
+  <p>2日</p>
+  <p>上午6:00<br/>
+  ~<br/>
+  下午6:00<br/>
   
-  <div class="card-img-top" style={{
-                                   
-                                   height:'200px', 
-                                   backgroundImage:`url('todo-demo/weatherIcon/多雲.svg')`,
-                                  backgroundSize:"cover",
-                                  backgroundPosition:"center center",
-                               }}>123</div>
+  </p>
+  <p>
+    <img src="." alt=""/>
+  </p>
+
+  <p>多雲</p>
+  <p><CiUmbrella />10%</p>
+  
+  
+</div>
+
+
+ </div>
+  </div>
+</div>
+<div className="col">第二欄</div>
+
+
+    </div>
   
 
     
