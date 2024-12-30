@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+       <!-- jquery-->
+   <script src="./jquery-3.7.1.min.js"></script>
+</head>
+<body>
+   <h2>非前端框架下的jquery使用</h2> 
+
+   <hr>
+   <div>
+    <p>loerm5</p>
+<p>Click</p>
+<p>Click2</p>
+
+   </div>
+
+   <script>
+$(document).ready(function(){
+    //程式撰寫區
+    $('p').click(function(){
+//hide()=>隱藏
+        $(this).hide();
+    })
+});
+
+
+//檢寫法
+$(function(){
+    //程式撰寫區
+    $('h2').click(function(){
+        $(this).hide();
+    })
+});
+
+    </script>
+
+
+
+<hr>
+<p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+</p>
+<button id="hide">隱藏</button>
+<button id="show">顯示</button>
+<button id="toggle">雙向</button>
+<script>
+
+    $(function(){
+        $('#hide').click(function(){
+            $('#p1').hide(1000);
+        });
+ 
+
+
+    
+
+        $('#show').click(function(){
+            $('#p1').show();
+        });
+
+         $('toggle').click(function(){
+            $('#p1').toggle(300);
+         });
+
+    });
+</script>
+<hr>
+
+
+<button id="btn1">展開</button>
+<button id="btn2">摺疊</button>
+<button id="btn3">雙向</button>
+<div  id="panel" style="display: none; background-color: blue;height: 100px;padding: 10px;">
+    我是展開面板
+</div>
+
+ <p>55555</p>
+<script>
+$(function(){
+    $('#btn1').click(function(){
+        $('#panel').slideDown(500);
+    });
+
+    $('#btn2').click(function(){
+        $('#panel').slideUp(500);
+    });
+
+    
+    $('#btn3').click(function(){
+        $('#panel').slideToggle(500);
+    });
+
+});
+</script>
+
+
+
+
+
+
+
+
+
+<!--最新消息 展開與摺疊-->
+
+<div id="panel2">
+
+<h2 >new1</h2>
+<p id="p2">Lorem ipsum dolor sit amet.</p>
+<h2>new2</h2>
+<p id="p3">Lorem ipsum dolor sit amet.</p>
+<h2>new3</h2>
+<p id="p4">Lorem ipsum dolor sit amet.</p>
+
+</div>
+
+
+<button id="hide2">隱藏</button>
+<button id="show2">顯示</button>
+<button id="toggle2">雙向</button>
+
+<script>
+
+    $(function(){
+        $('#hide2').click(function(){
+            $('#p2').hide(1000);
+            $('#p3').hide(1000);
+            $('#p4').hide(1000);
+        });
+ 
+
+
+
+        $('#show2').click(function(){
+            $('#p2').show();
+            $('#p3').show();
+            $('#p4').show();
+        });
+
+         $('toggle2').click(function(){
+            $('#panel2').toggle(300);
+         });
+
+    });
+</script>
+
+
+
+
+
+
+
+
+
+<button id="btn7">展開</button>
+<button id="btn8">摺疊</button>
+<div class="box1">
+    <button id="btn3">new1</button>
+    <div  id="panel4" style="display: none; background-color: blue;height: 100px;padding: 10px;">
+        我是展開面板1
+    </div>
+
+</div>
+<div class="box1">
+    <button id="btn4">new1</button>
+    <div  id="panel3" style="display: none; background-color: blue;height: 100px;padding: 10px;">
+        我是展開面板2
+    </div>
+
+</div>
+
+<style>
+    .box1 button{
+    cursor:pointer;
+    }
+</style>
+
+
+<script>
+$(function(){
+    $('#btn1').click(function(){
+        $('#panel').slideDown(500);
+    });
+
+    $('#btn2').click(function(){
+        $('#panel').slideUp(500);
+    });
+
+    
+    $('#btn3').click(function(){
+        $('#panel').slideToggle(500);
+    });
+    $('#btn4').click(function(){
+        $('#panel3').slideToggle(500);
+    });
+
+});
+</script>
+
+
+
+<br>
+<!--animate-->
+<button id="up">上</button>
+<button id="down">下</button>
+<button id="left">左</button>
+<button id="right">又</button>
+<button id="zoom">縮放</button>
+<button id="zoom3">雙向</button>
+<button id="chang">變色</button>
+
+    <div class="box2">
+        <p>123</p>
+</div>
+
+
+<style>
+    .box2{
+        border:1px solid red;
+        position: relative;
+    }
+    .box2 p{
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+        margin-top: 50px;
+        position: absolute;
+    }
+</style>
+
+<script>
+    $(function(){
+        $('#up').click(function(){
+            $('.box2').animate({top:"-100px"})
+        })
+        $('#up').click(function(){
+            $('.box2').animate({top:"-100px"})
+        })
+        $('#up').click(function(){
+            $('.box2').animate({top:"-100px"})
+        })
+        $('#up').click(function(){
+            $('.box2').animate({top:"-100px"})
+        })
+
+
+
+   });
+
+   $('#chang').click(function(){
+            $('.box2').css({
+                "background-color":"yellow",
+                "color":"red"
+            });
+        })
+
+
+
+
+   
+</script>
+
+
+</body>
+</html>

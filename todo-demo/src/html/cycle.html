@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+    img{
+        width: 600px;
+        height: 450px;
+
+    }
+    .box{
+
+        border:1px solid red;
+        width: 600px;
+        height: 450px;
+        position: relative;
+    }
+        
+
+    /*倫波導覽列*/
+    #nav{
+       
+        position: absolute; 
+      bottom: 10px;
+      z-index: 999;
+    }
+    #nav a{
+        color: aliceblue;
+        text-decoration: none;
+        font-size: 20px;
+        margin-left: 20px;
+        border: 1px solid #FFF;
+        width: 20px;height: 20px;
+        display: inline-block;/*轉成區塊元素並水平排列*/
+text-align: center;
+line-height: 20px;
+border-radius: 50%;
+}
+#nav a.activeSlide{
+    background-color: rgb(0,0,121);
+}
+/*遮色區*/
+.mask{
+position: absolute;
+right:0;
+bottom: 0px;
+z-index: 998;
+background-color: rgb(0,0,50);
+width: 100%;
+
+height: 50px;
+}
+
+</style>
+
+
+</head>
+<body>
+    <div class="box"> 
+        <div id="imgCycle">
+        <img src="./images/01.jpg" alt="">
+        <img src="./images/02.jpg" alt="">
+        <img src="./images/03.jpg" alt="">
+        <img src="./images/04.jpg" alt="">
+        <img src="./images/05.jpg" alt="">
+      
+        
+    </div>
+   <div class="mask"></div>
+    <!--<nav>倫波紐導覽列</nav>-->
+
+    </div>
+
+
+<!--載入jquery主程式-->
+<script src="./js/jquery-1.11.3.min.js"></script>
+<!--載入倫波主程式-->
+<script src="./js/jquery.cycle.all.js"></script>
+
+
+<!--撰寫自己的jquery-->
+<script>
+
+
+    $(function(){
+        //預設為淡入淡出
+        $('#imgCycle').after('<div id="nav"></div>').cycle({
+            fx:'fade', //輪播方式
+            sync:true,//有無錢一張的殘影
+            delay:-2000, //第一次第一章圖停留的時間
+            timeout:500, //倫波速度
+            pager:'#nav'   //生成輪播的超連結
+        });
+    })
+</script>
+
+</body>
+</html>
